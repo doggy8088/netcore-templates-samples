@@ -4,8 +4,8 @@
 
 ```sh
 cd /d C:\Projects
-git clone https://github.com/doggy8088/netcore-template-templates.git
-cd netcore-template-templates
+git clone https://github.com/doggy8088/netcore-templates-samples.git
+cd netcore-templates-samples
 ```
 
 ## 基本範本語法 (`01-basic-template`)
@@ -29,7 +29,7 @@ cd netcore-template-templates
 3. 移除範本 (移除時必須使用絕對路徑)
 
     ```sh
-    dotnet new -u C:\Projects\netcore-template-templates\01-basic-template
+    dotnet new -u C:\Projects\netcore-templates-samples\01-basic-template
     ```
 
 ## 忽略特定檔案或資料夾 (`02-ignore-files`)
@@ -53,7 +53,7 @@ cd netcore-template-templates
 3. 移除範本 (移除時必須使用絕對路徑)
 
     ```sh
-    dotnet new -u C:\Projects\netcore-template-templates\02-ignore-files
+    dotnet new -u C:\Projects\netcore-templates-samples\02-ignore-files
     ```
 
 ## 建立後自動還原套件 (`03-restore-on-create`)
@@ -77,7 +77,7 @@ cd netcore-template-templates
 3. 移除範本 (移除時必須使用絕對路徑)
 
     ```sh
-    dotnet new -u C:\Projects\netcore-template-templates\03-restore-on-create
+    dotnet new -u C:\Projects\netcore-templates-samples\03-restore-on-create
     ```
 
 ## 自動加入 NuGet 套件 (`04-add-package-reference`)
@@ -101,7 +101,7 @@ cd netcore-template-templates
 3. 移除範本 (移除時必須使用絕對路徑)
 
     ```sh
-    dotnet new -u C:\Projects\netcore-template-templates\04-add-package-reference
+    dotnet new -u C:\Projects\netcore-templates-samples\04-add-package-reference
     ```
 
 ## 使用 NuGet 套件封裝多個專案範本
