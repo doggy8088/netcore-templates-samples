@@ -56,6 +56,30 @@ cd netcore-template-templates
     dotnet new -u C:\Projects\netcore-template-templates\02-ignore-files
     ```
 
+## 建立後自動還原套件 (`03-restore-on-create`)
+
+1. 安裝範本
+
+    ```sh
+    cd 03-restore-on-create
+    dotnet new -i ./
+    ```
+
+2. 測試執行
+
+    ```sh
+    pushd .
+    cd /d %TEMP%
+    dotnet new sample03 -n c3
+    popd
+    ```
+
+3. 移除範本 (移除時必須使用絕對路徑)
+
+    ```sh
+    dotnet new -u C:\Projects\netcore-template-templates\03-restore-on-create
+    ```
+
 ## 相關連結
 
 - Microsoft Docs
