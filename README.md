@@ -2,6 +2,36 @@
 
 請先複製本專案回去，參考這篇文章來完成實作練習。
 
+```sh
+cd /d C:\Projects
+git clone https://github.com/doggy8088/netcore-template-templates.git
+cd netcore-template-templates
+```
+
+## 基本範本語法 (`01-basic-template`)
+
+1. 安裝範本
+
+    ```sh
+    cd 01-basic-template
+    dotnet new -i ./
+    ```
+
+2. 測試執行
+
+    ```sh
+    pushd .
+    cd /d %TEMP%
+    dotnet new sample01 -n c1
+    popd
+    ```
+
+3. 移除範本 (移除時必須使用絕對路徑)
+
+    ```sh
+    dotnet new -u C:\Projects\netcore-template-templates\01-basic-template
+    ```
+
 ## 相關連結
 
 - Microsoft Docs
