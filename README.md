@@ -104,6 +104,67 @@ cd netcore-template-templates
     dotnet new -u C:\Projects\netcore-template-templates\04-add-package-reference
     ```
 
+## 使用 NuGet 套件封裝多個專案範本
+
+1. 將所有專案移至 `templates` 目錄下
+
+2. 加入 `Duotify.Templates.Samples.3.1.csproj` 專案檔
+
+    ```xml
+    <Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <PackageType>Template</PackageType>
+        <PackageVersion>1.0</PackageVersion>
+        <PackageId>Duotify.Templates.Samples.3.1</PackageId>
+        <Title>Duotify Templates</Title>
+        <Authors>Will 保哥</Authors>
+        <Description>Templates to use when creating an application for Duotify Inc.</Description>
+        <PackageTags>dotnet-new;templates;duotify</PackageTags>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <IncludeContentInPack>true</IncludeContentInPack>
+        <IncludeBuildOutput>false</IncludeBuildOutput>
+        <ContentTargetFolders>content</ContentTargetFolders>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Content Include="templates\**\*" Exclude="templates\**\bin\**;templates\**\obj\**" />
+        <Compile Remove="**\*" />
+    </ItemGroup>
+
+    </Project>
+    ```
+
+3. 產生 NuGet 套件
+
+    ```sh
+    dotnet pack
+    ```
+
+4. 安裝 `Duotify.Templates.Samples.3.1` 套件
+
+    ```sh
+    dotnet new -i bin\Debug\Duotify.Templates.Samples.3.1.1.0.0.nupkg
+    ```
+
+5. 測試透過專案範本建立專案
+
+    ```sh
+    pushd .
+    cd %temp%
+    dotnet new sample01 -n c1
+    dotnet new sample02 -n c2
+    dotnet new sample03 -n c3
+    dotnet new sample04 -n c4
+    popd
+    ```
+
+6. 移除 `Duotify.Templates.Samples.3.1` 套件
+
+    ```sh
+    dotnet new -u Duotify.Templates.Samples.3.1
+    ```
+
 ## 相關連結
 
 - Microsoft Docs

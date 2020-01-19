@@ -1,10 +1,10 @@
 {
   "$schema": "http://json.schemastore.org/template",
-  "author": "Contoso",
+  "author": "Duotify",
   "classifications": [
     "Console"
   ],
-  "name": "Contoso Sample 04",
+  "name": "Duotify Sample 04",
   "identity": "MyProject.04.Sample.CSharp",
   "groupIdentity": "MyProject.04.Sample",
   "shortName": "sample04",
