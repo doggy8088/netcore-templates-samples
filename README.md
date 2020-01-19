@@ -32,6 +32,30 @@ cd netcore-template-templates
     dotnet new -u C:\Projects\netcore-template-templates\01-basic-template
     ```
 
+## 忽略特定檔案或資料夾 (`02-ignore-files`)
+
+1. 安裝範本
+
+    ```sh
+    cd 02-ignore-files
+    dotnet new -i ./
+    ```
+
+2. 測試執行
+
+    ```sh
+    pushd .
+    cd /d %TEMP%
+    dotnet new sample02 -n c2
+    popd
+    ```
+
+3. 移除範本 (移除時必須使用絕對路徑)
+
+    ```sh
+    dotnet new -u C:\Projects\netcore-template-templates\02-ignore-files
+    ```
+
 ## 相關連結
 
 - Microsoft Docs
