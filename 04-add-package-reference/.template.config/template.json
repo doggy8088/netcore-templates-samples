@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Contoso",
+  "classifications": [
+    "Console"
+  ],
+  "name": "Contoso Sample 04",
+  "identity": "MyProject.04.Sample.CSharp",
+  "groupIdentity": "MyProject.04.Sample",
+  "shortName": "sample04",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "sourceName": "MyProject.Con",
+  "preferNameDirectory": true,
+  "sources": [
+    {
+      "modifiers": [
+        {
+          "exclude": [
+            ".vs/**"
+          ]
+        }
+      ]
+    }
+  ],
+  "symbols": {
+    "skipRestore": {
+      "type": "parameter",
+      "datatype": "bool",
+      "description": "If specified, skips the automatic restore of the project on create.",
+      "defaultValue": "false"
+    }
+  },
+  "postActions": [
+    {
+      "description": "Add 'NSwag.AspNetCore' NuGet packages to this project.",
+      "args": {
+        "referenceType": "package",
+        "reference": "NSwag.AspNetCore"
+      },
+      "manualInstructions": [
+        {
+          "text": "Run 'dotnet add package NSwag.AspNetCore'"
+        }
+      ],
+      "actionId": "B17581D1-C5C9-4489-8F0A-004BE667B814",
+      "continueOnError": true
+    },
+    {
+      "condition": "(!skipRestore)",
+      "description": "Restore NuGet packages required by this project.",
+      "manualInstructions": [
+        {
+          "text": "Run 'dotnet restore'"
+        }
+      ],
+      "actionId": "210D431B-A78B-4D2F-B762-4ED3E3EA9025",
+      "continueOnError": true
+    }
+  ]
+}

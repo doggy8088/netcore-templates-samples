@@ -80,6 +80,30 @@ cd netcore-template-templates
     dotnet new -u C:\Projects\netcore-template-templates\03-restore-on-create
     ```
 
+## 自動加入 NuGet 套件 (`04-add-package-reference`)
+
+1. 安裝範本
+
+    ```sh
+    cd 04-add-package-reference
+    dotnet new -i ./
+    ```
+
+2. 測試執行
+
+    ```sh
+    pushd .
+    cd /d %TEMP%
+    dotnet new sample04 -n c4
+    popd
+    ```
+
+3. 移除範本 (移除時必須使用絕對路徑)
+
+    ```sh
+    dotnet new -u C:\Projects\netcore-template-templates\04-add-package-reference
+    ```
+
 ## 相關連結
 
 - Microsoft Docs
